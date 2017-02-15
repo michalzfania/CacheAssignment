@@ -1,0 +1,28 @@
+<h1>
+  Caching Tool!
+</h1>
+
+<span>LRU Mode?</span>
+<input type="checkbox" [(ngModel)]="LRUMode" />
+<div>
+  <input type="text" #addCacheLeyValue placeholder="key"/>
+  <input type="text" #addCacheValueVlue placeholder="value"/>
+  <button (click)="addToCache(addCacheLeyValue.value, addCacheValueVlue.value)">Add</button>
+</div>
+
+<div>
+  <ul>
+    <li *ngFor="let cacheEntry of allCacheEntries">{{cacheEntry.key}} : {{cacheEntry.value}}</li>
+  </ul>
+  <button (click)="getAllCachedEntries()">Show All Cache</button>
+</div>
+
+<div>
+  <input type="text" #getCacheKey placeholder="value"/>
+  <button (click)="getCachedValue(getCacheKey.value)">Get By Key</button>
+  <div>{{valueByKey}}</div>
+</div>
+
+<div class="error-messages">{{errorMessages}}</div>
+
+
